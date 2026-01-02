@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivaramalingeshwara Trust</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Ramabhadra&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config for Custom Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'heading': ['Ramabhadra', 'sans-serif'],
+                        'body': ['Mandali', 'sans-serif'],
+                    },
+                    colors: {
+                        'saffron': '#FF9933',
+                        'saffron-dark': '#CC7722',
+                        'marigold': '#FDB813',
+                        'temple-red': '#8B0000',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<body class="font-body bg-orange-50 text-gray-800 antialiased selection:bg-saffron selection:text-white">
+
+    <!-- Audio Element -->
+    <audio id="omAudio" src="../images/om%20namashivaya.mp3" preload="auto"></audio>
+
+    <!-- Welcome Overlay - Click to Enter (enables audio) -->
+    <div id="welcomeOverlay"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-gradient-to-br from-saffron via-orange-500 to-temple-red cursor-pointer transition-opacity duration-500">
+        <div class="text-center text-white p-8 animate-pulse">
+            <div class="text-9xl md:text-[12rem] mb-4 drop-shadow-2xl">ॐ</div>
+            <h2 class="font-heading text-2xl md:text-4xl mb-4">శ్రీ రామలింగేశ్వర దేవస్థానం</h2>
+            <p class="text-lg md:text-xl opacity-90 mb-6">Ghanapur</p>
+            <div
+                class="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30 hover:bg-white/30 transition">
+                <span class="text-lg">🔊</span>
+                <span class="font-heading">Click to Enter</span>
+            </div>
+            <p class="mt-4 text-sm opacity-70">ప్రవేశించడానికి క్లిక్ చేయండి</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/95 shadow-md backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo / Name -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <button onclick="toggleMenu()"
+                        class="focus:outline-none transition transform hover:scale-110 active:scale-95"
+                        title="Open Menu">
+                        <div
+                            class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center text-white shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </div>
+                    </button>
+                    <span class="font-heading text-temple-red text-lg md:text-xl lg:text-2xl cursor-pointer"
+                        onclick="window.location.href='index.html'" id="nav-title">శివరామలింగేశ్వర ట్రస్ట్</span>
+                </div>
+
+                <!-- Audio Toggle & Language Toggle -->
+                <div class="flex items-center gap-3">
+                    <!-- Audio Toggle Button -->
+                    <button id="audioToggle" onclick="toggleAudio()"
+                        class="bg-saffron hover:bg-saffron-dark text-white px-3 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-2"
+                        title="Toggle Sound">
+                        <svg id="audioIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                        </svg>
+                        <span id="audioText" class="hidden sm:inline">🔊</span>
+                    </button>
+
+                    <!-- Language Toggle -->
+                    <button onclick="toggleLanguage()"
+                        class="bg-temple-red hover:bg-red-900 text-white px-4 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-2">
+                        <span id="lang-btn-text">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.148" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Overlay (Hidden by default) -->
+    <div id="sidebar-overlay" onclick="toggleMenu()"
+        class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+
+    <!-- Sidebar Menu (Hidden by default) -->
+    <div id="sidebar-menu"
+        class="fixed top-0 left-0 w-64 h-full bg-orange-50 z-[70] transform -translate-x-full transition-transform duration-300 shadow-2xl overflow-y-auto">
+        <!-- Close Button -->
+        <div class="p-4 flex justify-end">
+            <button onclick="toggleMenu()" class="text-temple-red hover:text-red-700 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu Items -->
+        <div class="p-6 pb-24 space-y-6">
+            <div class="flex items-center justify-center mb-8">
+                <div
+                    class="w-16 h-16 bg-saffron rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-lg border-4 border-white">
+                    ॐ
+                </div>
+            </div>
+
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3 bg-orange-100 text-temple-red">
+                    <span>🏠</span> <span>Home</span>
+                </a>
+                <a href="about.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>🙏</span> <span id="menu-about">About Us</span>
+                </a>
+                <a href="events.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>📅</span> <span id="menu-events">Events</span>
+                </a>
+                <a href="donation.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>💰</span> <span id="menu-donation">Donation</span>
+                </a>
+                <a href="gallery.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>🖼️</span> <span id="menu-gallery">Gallery</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div
+            class="absolute bottom-0 w-full p-2 text-center text-gray-500 text-sm border-t border-orange-200 bg-orange-50">
+            &copy; 2025 Shivaramalingeshwara Trust
+        </div>
+    </div>
+
+    <!-- Hero Section (Layered Animation) -->
+    <header class="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
+
+        <!-- Layer 0: Background -->
+        <div class="absolute inset-0 z-0 bg-gradient-to-b from-saffron via-orange-400 to-orange-100"></div>
+
+        <!-- Decorative Pattern Overlay -->
+        <div class="absolute inset-0 z-0 opacity-10"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%239C92AC\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+
+        <div
+            class="relative w-full max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center mt-10 md:mt-0">
+
+            <!-- Visual Container -->
+            <div class="relative w-full md:w-1/2 h-[500px] flex items-center justify-center mb-10 md:mb-0">
+
+                <!-- Layer 1: Rotating Chakra / Halo (Z-10) -->
+                <!-- Positioned absolutely in center -->
+                <div
+                    class="absolute top-1/2 left-1/2 w-[350px] h-[350px] md:w-[500px] md:h-[500px] z-10 animate-chakra opacity-40">
+                    <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        class="w-full h-full text-yellow-200 drop-shadow-lg">
+                        <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="2"
+                            stroke-dasharray="10 5" />
+                        <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="1" />
+                        <path d="M100 10 L100 190 M10 100 L190 100 M36 36 L164 164 M36 164 L164 36"
+                            stroke="currentColor" stroke-width="4" stroke-linecap="round" />
+                        <path d="M100 20 L110 50 L140 60 L110 70 L100 100 L90 70 L60 60 L90 50 Z" fill="currentColor"
+                            opacity="0.5" />
+                        <!-- Sun Rays -->
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(0 100 100)" />
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(45 100 100)" />
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(90 100 100)" />
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(135 100 100)" />
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(180 100 100)" />
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(225 100 100)" />
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(270 100 100)" />
+                        <path d="M100 0 L115 30 L100 40 L85 30 Z" fill="currentColor" transform="rotate(315 100 100)" />
+                    </svg>
+                </div>
+
+                <!-- Layer 2: Deity Image (Z-20) -->
+                <!-- Placed on top of the halo -->
+                <img src="../images/Capture.png" alt="శ్రీ రాముడు" id="deity-image"
+                    class="relative z-20 h-[300px] md:h-[450px] object-contain drop-shadow-2xl rounded-lg md:rounded-none md:bg-transparent"
+                    style="mask-image: linear-gradient(to bottom, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);">
+
+                <!-- Donation Button under Image -->
+                <a href="donation.html"
+                    class="absolute bottom-4 z-30 bg-temple-red hover:bg-red-800 text-white font-bold py-3 px-6 rounded-full shadow-lg transform transition hover:scale-105 flex items-center gap-2 animate-pulse">
+                    <span>💰</span>
+                    <span>Donate Now</span>
+                </a>
+            </div>
+
+            <!-- Layer 3: Content (Z-30) -->
+            <div class="relative z-30 w-full md:w-1/2 text-center md:text-left text-temple-red p-4 -mt-10 md:-mt-20">
+                <span class="block text-saffron-dark font-bold tracking-widest uppercase mb-2" id="hero-subtitle">Reg:
+                    37/2025</span>
+                <h1 class="font-heading text-4xl md:text-6xl lg:text-7xl mb-6 leading-tight drop-shadow-sm"
+                    id="hero-title">
+                    శ్రీ రామలింగేశ్వర <br /> దేవస్థానం, ఘణాపూర్
+                </h1>
+                <p class="font-heading text-xl md:text-2xl text-gray-800 mb-8 p-4 bg-white/40 rounded-lg backdrop-blur-sm inline-block shadow-sm"
+                    id="hero-highlight">
+                    79 అడుగుల భారీ శ్రీరాముడి కాంస్య విగ్రహ నిర్మాణం!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="donation.html"
+                        class="bg-temple-red hover:bg-red-800 text-white font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-105 flex items-center justify-center gap-2">
+                        <span>🕉️</span>
+                        <span id="hero-cta">విరాళం ఇవ్వండి</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Wave -->
+        <div class="absolute bottom-0 w-full leading-none z-20 text-orange-50">
+            <svg class="relative block w-full h-[50px] md:h-[100px]" data-name="Layer 1"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    fill="currentColor"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="max-w-4xl mx-auto px-4 py-16">
+
+        <!-- About Project -->
+        <section class="mb-16 text-center">
+            <h2 class="font-heading text-3xl md:text-4xl text-temple-red mb-6" id="about-title">మా ట్రస్ట్ యొక్క పవిత్ర
+                సంకల్పం</h2>
+            <div class="glass-card p-8 rounded-2xl">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700 mb-8" id="about-mission">
+                    మా ట్రస్ట్ కేవలం నిర్మాణాలను మాత్రమే కాకుండా, ధర్మ స్థాపన మరియు ఆధ్యాత్మిక సేవా కార్యక్రమాలను
+                    అంకితభావంతో నిర్వహిస్తోంది.
+                </p>
+
+                <div class="mb-8">
+                    <h3 class="font-heading text-xl text-gray-800 mb-4" id="about-temples-title">మేము చేపడుతున్న పవిత్ర
+                        ఆలయ నిర్మాణాలు:</h3>
+                    <ul class="text-lg text-gray-700 space-y-2 inline-block text-left mx-auto">
+                        <li class="flex items-center gap-2">
+                            <span class="text-saffron text-xl">🕉️</span>
+                            <span class="font-bold" id="temple-1">శివాలయం</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-saffron text-xl">🕉️</span>
+                            <span class="font-bold" id="temple-2">దుర్గామాత ఆలయం</span>
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-saffron text-xl">🕉️</span>
+                            <span class="font-bold" id="temple-3">శ్రీరామ మందిరం</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-orange-50 border-2 border-saffron/30 rounded-xl p-6 md:p-8 shadow-inner">
+                    <div class="inline-block bg-saffron text-white text-xs md:text-sm font-bold px-3 py-1 rounded-full mb-3 shadow-sm"
+                        id="about-highlight-badge">
+                        ✨ మా ప్రత్యేక ఆకర్షణ & ప్రధాన సంకల్పం ✨
+                    </div>
+                    <h3 class="font-heading text-2xl md:text-4xl text-temple-red mb-4 drop-shadow-sm"
+                        id="about-highlight-title">
+                        79 అడుగుల శ్రీరామ కాంస్య విగ్రహం
+                    </h3>
+                    <p class="text-lg md:text-xl text-gray-800 leading-relaxed" id="about-highlight-text">
+                        భక్తి భావాన్ని ఆకాశమంత ఎత్తుకు తీసుకెళ్లేలా, <span class="font-bold text-temple-red">79 అడుగుల
+                            భారీ శ్రీరాముడి కాంస్య విగ్రహాన్ని</span> ప్రతిష్టించడం మా ట్రస్ట్ యొక్క ప్రధాన లక్ష్యం
+                        మరియు గర్వకారణం.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donation Call-to-Action -->
+        <section class="mt-16 text-center">
+            <div class="bg-gradient-to-r from-temple-red to-saffron-dark rounded-2xl p-8 md:p-12 shadow-xl">
+                <h2 class="font-heading text-3xl md:text-4xl text-white mb-4">🙏 Support Our Mission 🙏</h2>
+                <p class="text-orange-100 text-lg mb-6">Help us build the magnificent 79ft Sri Rama Bronze Statue</p>
+                <a href="donation.html"
+                    class="inline-flex items-center gap-3 bg-white hover:bg-orange-50 text-temple-red font-bold py-4 px-8 rounded-full shadow-lg transform transition hover:scale-105 text-xl">
+                    <span>💰</span>
+                    <span>Donate Now</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10 mt-10 border-t-4 border-saffron">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-4">
+                <div
+                    class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-saffron font-bold text-2xl border border-gray-700">
+                    🕉️</div>
+            </div>
+            <p class="font-heading text-xl mb-2" id="footer-trust">శివరామలింగేశ్వర ట్రస్ట్</p>
+            <p class="text-gray-400 text-sm">Reg No: 37/2025 | Ghanapur</p>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-xs text-gray-500">
+                &copy; 2025 Shivaramalingeshwara Trust. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- External JavaScript -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

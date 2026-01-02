@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="te">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Shivaramalingeshwara Trust</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mandali&family=Ramabhadra&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { 'heading': ['Ramabhadra', 'sans-serif'], 'body': ['Mandali', 'sans-serif'] },
+                    colors: { 'saffron': '#FF9933', 'saffron-dark': '#CC7722', 'marigold': '#FDB813', 'temple-red': '#8B0000' }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        body {
+            padding-top: 80px;
+        }
+    </style>
+</head>
+
+<body class="font-body bg-orange-50 text-gray-800 antialiased selection:bg-saffron selection:text-white">
+
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/95 shadow-md backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <button onclick="toggleMenu()"
+                        class="focus:outline-none transition transform hover:scale-110 active:scale-95">
+                        <div
+                            class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center text-white shadow-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </div>
+                    </button>
+                    <span class="font-heading text-temple-red text-lg md:text-xl lg:text-2xl cursor-pointer"
+                        onclick="window.location.href='index.html'" id="nav-title">శివరామలింగేశ్వర ట్రస్ట్</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="toggleLanguage()"
+                        class="bg-temple-red hover:bg-red-900 text-white px-4 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-2">
+                        <span id="lang-btn-text">English</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.148" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" onclick="toggleMenu()"
+        class="fixed inset-0 bg-black/50 z-[60] hidden transition-opacity duration-300 opacity-0"></div>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebar-menu"
+        class="fixed top-0 left-0 w-64 h-full bg-orange-50 z-[70] transform -translate-x-full transition-transform duration-300 shadow-2xl overflow-y-auto">
+        <div class="p-4 flex justify-end">
+            <button onclick="toggleMenu()" class="text-temple-red hover:text-red-700 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+        <div class="p-6 pb-24 space-y-6">
+            <div class="flex items-center justify-center mb-8">
+                <div
+                    class="w-16 h-16 bg-saffron rounded-full flex items-center justify-center text-white font-bold text-3xl shadow-lg border-4 border-white">
+                    ॐ</div>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="index.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>🏠</span> <span>Home</span>
+                </a>
+                <a href="about.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>🙏</span> <span id="menu-about">About Us</span>
+                </a>
+                <a href="events.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>📅</span> <span id="menu-events">Events</span>
+                </a>
+                <a href="donation.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3">
+                    <span>💰</span> <span id="menu-donation">Donation</span>
+                </a>
+                <a href="gallery.html"
+                    class="font-heading text-xl text-gray-800 hover:text-temple-red hover:bg-orange-100 p-3 rounded-lg transition flex items-center gap-3 bg-orange-100 text-temple-red">
+                    <span>🖼️</span> <span id="menu-gallery">Gallery</span>
+                </a>
+            </nav>
+        </div>
+        <div
+            class="absolute bottom-0 w-full p-2 text-center text-gray-500 text-sm border-t border-orange-200 bg-orange-50">
+            &copy; 2025 Shivaramalingeshwara Trust
+        </div>
+    </div>
+
+    <main class="max-w-4xl mx-auto px-4 py-16 min-h-[60vh]">
+        <section class="text-center">
+            <h1 class="font-heading text-4xl md:text-5xl text-temple-red mb-8">Gallery</h1>
+            <div class="glass-card p-8 rounded-2xl">
+                <p class="text-lg text-gray-700 mb-6">
+                    Photos of the temple and deity will be uploaded here.
+                </p>
+                <a href="index.html"
+                    class="inline-block bg-saffron text-white font-heading px-6 py-2 rounded-full hover:bg-saffron-dark transition">
+                    &larr; Back to Home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-10 mt-10 border-t-4 border-saffron">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex justify-center mb-4">
+                <div
+                    class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-saffron font-bold text-2xl border border-gray-700">
+                    ॐ</div>
+            </div>
+            <p class="font-heading text-xl mb-2" id="footer-trust">శివరామలింగేశ్వర ట్రస్ట్</p>
+            <p class="text-gray-400 text-sm">Reg No: 37/2025 | Ghanapur</p>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-xs text-gray-500">
+                &copy; 2025 Shivaramalingeshwara Trust. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
