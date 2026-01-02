@@ -2,7 +2,7 @@
 const CONFIG = {
     // UPI ID for donations
     upiId: "shivaramalingeshwaratrust@sbi",
-    payeeName: "Shivaramalingeshwara Trust",
+    payeeName: "SHIVA RAMALINGESWARA TRUST",
     // Google Sheets Web App URL for storing donations
     googleSheetsUrl: "https://script.google.com/macros/s/AKfycbyOoH73JsRRZYTdQEihAI8ugysz-PoxqDL7WluW3BEJVVtksFPXUwGgYLfEtvHSNDMvVg/exec"
 };
