@@ -358,30 +358,36 @@ function closeQRModal() {
 }
 
 /**
- * Opens UPI app directly (GPay, PhonePe, etc.)
- * If amount is empty, opens without fixed amount
+ * Handles UPI link click - validates form and redirects
+ * Returns true to allow the anchor to navigate, false to cancel
  */
-function openUPIApp() {
+function handleUPIClick() {
     const formData = validateDonationForm(false); // Amount not required
-    if (!formData) return;
+    if (!formData) return false; // Cancel click if validation fails
 
     const upiUrl = generateUPIUrl(formData.name, formData.amount);
 
     console.log('Opening UPI App for:', formData.name, 'Amount:', formData.amount || 'Open');
     console.log('UPI URL:', upiUrl);
 
-    // Create a temporary anchor element and click it (more reliable for UPI deep links)
-    const link = document.createElement('a');
-    link.href = upiUrl;
-    link.style.display = 'none';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Set the href and let the browser handle it
+    const link = document.getElementById('upiDirectLink');
+    if (link) {
+        link.href = upiUrl;
+    }
 
-    // Show UTR section after a delay (when user comes back from UPI app)
+    // Show UTR section after a delay
     setTimeout(() => {
         showUTRSection();
-    }, 1000);
+    }, 500);
+
+    // Return true to allow the link to navigate
+    return true;
+}
+
+// Keep old function name for compatibility
+function openUPIApp() {
+    handleUPIClick();
 }
 
 // Close QR modal when clicking outside
