@@ -370,11 +370,18 @@ function openUPIApp() {
     console.log('Opening UPI App for:', formData.name, 'Amount:', formData.amount || 'Open');
     console.log('UPI URL:', upiUrl);
 
-    // Show UTR section immediately (user will see it when they come back)
-    showUTRSection();
+    // Create a temporary anchor element and click it (more reliable for UPI deep links)
+    const link = document.createElement('a');
+    link.href = upiUrl;
+    link.style.display = 'none';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
 
-    // Redirect to UPI app
-    window.location.href = upiUrl;
+    // Show UTR section after a delay (when user comes back from UPI app)
+    setTimeout(() => {
+        showUTRSection();
+    }, 1000);
 }
 
 // Close QR modal when clicking outside
