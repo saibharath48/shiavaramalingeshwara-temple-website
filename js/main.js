@@ -368,12 +368,34 @@ function openUPIApp() {
     const upiUrl = generateUPIUrl(formData.name, formData.amount);
 
     console.log('Opening UPI App for:', formData.name, 'Amount:', formData.amount || 'Open');
+    console.log('UPI URL:', upiUrl);
 
     // Show UTR section immediately (user will see it when they come back)
     showUTRSection();
 
-    // Redirect to UPI app
-    window.location.href = upiUrl;
+    // Check if on mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        // Try opening via intent
+        window.location.href = upiUrl;
+
+        // If UPI app doesn't open in 2 seconds, show fallback message
+        setTimeout(() => {
+            const shouldShowQR = confirm(
+                'UPI app not opening?\n\n' +
+                'క్లిక్ "OK" to scan QR code instead.\n' +
+                'Click "Cancel" to try again.'
+            );
+            if (shouldShowQR) {
+                showQRCode();
+            }
+        }, 2500);
+    } else {
+        // On desktop, show QR code directly
+        alert('Please scan the QR code with your mobile UPI app.\n\nదయచేసి మీ మొబైల్ UPI యాప్‌తో QR కోడ్‌ని స్కాన్ చేయండి.');
+        showQRCode();
+    }
 }
 
 // Close QR modal when clicking outside
