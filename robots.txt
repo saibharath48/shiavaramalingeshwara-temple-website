@@ -1,0 +1,8 @@
+# Robots.txt for Shivaramalingeshwara Trust Website
+# https://shivaramalingeshwaratrust.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://shivaramalingeshwaratrust.com/sitemap.xml
