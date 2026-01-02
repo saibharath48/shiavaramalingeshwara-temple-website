@@ -373,29 +373,8 @@ function openUPIApp() {
     // Show UTR section immediately (user will see it when they come back)
     showUTRSection();
 
-    // Check if on mobile
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-    if (isMobile) {
-        // Try opening via intent
-        window.location.href = upiUrl;
-
-        // If UPI app doesn't open in 2 seconds, show fallback message
-        setTimeout(() => {
-            const shouldShowQR = confirm(
-                'UPI app not opening?\n\n' +
-                'క్లిక్ "OK" to scan QR code instead.\n' +
-                'Click "Cancel" to try again.'
-            );
-            if (shouldShowQR) {
-                showQRCode();
-            }
-        }, 2500);
-    } else {
-        // On desktop, show QR code directly
-        alert('Please scan the QR code with your mobile UPI app.\n\nదయచేసి మీ మొబైల్ UPI యాప్‌తో QR కోడ్‌ని స్కాన్ చేయండి.');
-        showQRCode();
-    }
+    // Redirect to UPI app
+    window.location.href = upiUrl;
 }
 
 // Close QR modal when clicking outside
