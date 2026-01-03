@@ -25,6 +25,59 @@
         body {
             padding-top: 80px;
         }
+
+        /* Category Card Hover Effect */
+        .category-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(139, 0, 0, 0.2);
+        }
+
+        .category-card:hover .category-icon {
+            transform: scale(1.1);
+        }
+
+        .category-icon {
+            transition: transform 0.3s ease;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            backdrop-filter: blur(8px);
+        }
+
+        /* Carousel Navigation Buttons */
+        .carousel-btn {
+            transition: all 0.2s ease;
+        }
+
+        .carousel-btn:hover {
+            transform: scale(1.1);
+            background-color: rgba(255, 153, 51, 1);
+        }
+
+        .carousel-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Image Loading Animation */
+        .carousel-image {
+            transition: opacity 0.3s ease;
+        }
+
+        /* Dot Indicators */
+        .dot-indicator {
+            transition: all 0.3s ease;
+        }
+
+        .dot-indicator.active {
+            background-color: #FF9933;
+            transform: scale(1.3);
+        }
     </style>
 </head>
 
@@ -113,20 +166,146 @@
         </div>
     </div>
 
-    <main class="max-w-4xl mx-auto px-4 py-16 min-h-[60vh]">
-        <section class="text-center">
-            <h1 class="font-heading text-4xl md:text-5xl text-temple-red mb-8">Gallery</h1>
-            <div class="glass-card p-8 rounded-2xl">
-                <p class="text-lg text-gray-700 mb-6">
-                    Photos of the temple and deity will be uploaded here.
-                </p>
-                <a href="index.html"
-                    class="inline-block bg-saffron text-white font-heading px-6 py-2 rounded-full hover:bg-saffron-dark transition">
-                    &larr; Back to Home
-                </a>
+    <main class="max-w-6xl mx-auto px-4 py-12 min-h-[60vh]">
+        <!-- Page Header -->
+        <section class="text-center mb-12">
+            <h1 class="font-heading text-4xl md:text-5xl text-temple-red mb-4" id="gallery-title">చిత్రమాలిక</h1>
+            <p class="text-gray-600 text-lg" id="gallery-subtitle">ఆలయ మరియు ట్రస్ట్ ఫోటోలు</p>
+        </section>
+
+        <!-- Category Cards Grid -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="categoryGrid">
+            <!-- News Clippings Category -->
+            <div class="category-card glass-card rounded-2xl overflow-hidden" onclick="openCarousel('news')">
+                <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center">
+                    <span class="category-icon text-7xl">📰</span>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-heading text-xl text-temple-red mb-2" id="cat-news-title">వార్తా పత్రికలు</h3>
+                    <p class="text-gray-600 text-sm" id="cat-news-subtitle">News Clippings</p>
+                    <p class="text-saffron font-bold mt-2" id="cat-news-count">10 Photos</p>
+                </div>
+            </div>
+
+            <!-- Construction Category -->
+            <div class="category-card glass-card rounded-2xl overflow-hidden" onclick="openCarousel('construction')">
+                <div class="h-48 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                    <span class="category-icon text-7xl">🏗️</span>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-heading text-xl text-temple-red mb-2" id="cat-construction-title">నిర్మాణ పనులు</h3>
+                    <p class="text-gray-600 text-sm" id="cat-construction-subtitle">Construction</p>
+                    <p class="text-saffron font-bold mt-2">27 Photos</p>
+                </div>
+            </div>
+
+            <!-- Shiva Pooja Category - Coming Soon -->
+            <div class="category-card glass-card rounded-2xl overflow-hidden opacity-60" onclick="showComingSoon()">
+                <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
+                    <span class="category-icon text-7xl">🙏</span>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-heading text-xl text-temple-red mb-2" id="cat-pooja-title">శివ పూజ</h3>
+                    <p class="text-gray-600 text-sm" id="cat-pooja-subtitle">Shiva Pooja</p>
+                    <p class="text-gray-400 font-bold mt-2">Coming Soon</p>
+                </div>
+            </div>
+
+            <!-- Goshala Category - Coming Soon -->
+            <div class="category-card glass-card rounded-2xl overflow-hidden opacity-60" onclick="showComingSoon()">
+                <div class="h-48 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                    <span class="category-icon text-7xl">🐄</span>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-heading text-xl text-temple-red mb-2" id="cat-goshala-title">గోశాల</h3>
+                    <p class="text-gray-600 text-sm" id="cat-goshala-subtitle">Goshala</p>
+                    <p class="text-gray-400 font-bold mt-2">Coming Soon</p>
+                </div>
+            </div>
+
+            <!-- Temple Architecture Category - Coming Soon -->
+            <div class="category-card glass-card rounded-2xl overflow-hidden opacity-60" onclick="showComingSoon()">
+                <div class="h-48 bg-gradient-to-br from-red-500 to-temple-red flex items-center justify-center">
+                    <span class="category-icon text-7xl">🛕</span>
+                </div>
+                <div class="p-5 text-center">
+                    <h3 class="font-heading text-xl text-temple-red mb-2" id="cat-architecture-title">ఆలయ నిర్మాణం</h3>
+                    <p class="text-gray-600 text-sm" id="cat-architecture-subtitle">Temple Architecture</p>
+                    <p class="text-gray-400 font-bold mt-2">Coming Soon</p>
+                </div>
             </div>
         </section>
+
+        <!-- Back to Home -->
+        <div class="text-center mt-12">
+            <a href="index.html"
+                class="inline-block bg-saffron text-white font-heading px-6 py-2 rounded-full hover:bg-saffron-dark transition">
+                &larr; Back to Home
+            </a>
+        </div>
     </main>
+
+    <!-- Image Carousel Modal -->
+    <div id="carouselModal"
+        class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center modal-overlay">
+        <!-- Close Button -->
+        <button onclick="closeCarousel()"
+            class="absolute top-4 right-4 text-white hover:text-saffron transition z-10 p-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <!-- Category Title -->
+        <div class="absolute top-4 left-4 text-white z-10">
+            <h3 class="font-heading text-xl md:text-2xl" id="carouselTitle">Category</h3>
+            <p class="text-saffron text-sm" id="carouselCounter">1 / 10</p>
+        </div>
+
+        <!-- Left Arrow -->
+        <button onclick="prevImage()"
+            class="carousel-btn absolute left-2 md:left-6 bg-saffron/80 hover:bg-saffron text-white p-3 md:p-4 rounded-full shadow-lg z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+
+        <!-- Image Container -->
+        <div class="w-full h-full flex items-center justify-center px-16 md:px-24 py-20">
+            <img id="carouselImage" src="" alt="Gallery Image"
+                class="carousel-image max-w-full max-h-full object-contain rounded-lg shadow-2xl">
+        </div>
+
+        <!-- Right Arrow -->
+        <button onclick="nextImage()"
+            class="carousel-btn absolute right-2 md:right-6 bg-saffron/80 hover:bg-saffron text-white p-3 md:p-4 rounded-full shadow-lg z-10">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+
+        <!-- Share Button -->
+        <div class="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-10" id="shareButtons">
+            <button onclick="shareForStatus()"
+                class="share-btn bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-6 py-3 rounded-full shadow-lg transition-all hover:scale-105 flex items-center gap-2 font-bold"
+                title="Download branded image for WhatsApp Status">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span>Share for Status</span>
+            </button>
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2" id="dotIndicators">
+            <!-- Dots will be generated by JavaScript -->
+        </div>
+    </div>
 
     <footer class="bg-gray-900 text-white py-10 mt-10 border-t-4 border-saffron">
         <div class="max-w-7xl mx-auto px-4 text-center">
@@ -142,7 +321,511 @@
             </div>
         </div>
     </footer>
+
     <script src="../js/main.js"></script>
+    <script>
+        // ===========================================
+        // --- GALLERY CONFIGURATION ---
+        // ===========================================
+
+        const galleryData = {
+            news: {
+                title: "వార్తా పత్రికలు",
+                titleEn: "News Clippings",
+                images: [
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418327/IMG-20260101-WA0060_jl3jat.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418322/IMG-20260101-WA0041_quewn7.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418322/IMG-20260101-WA0059_oex1it.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418321/IMG-20260101-WA0012_o3aslx.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418321/IMG-20260101-WA0056_vysxiv.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418321/IMG-20260101-WA0058_j3yfpg.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418321/IMG-20260101-WA0037_p1azlj.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418320/IMG-20260101-WA0011_vdmf8z.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418320/IMG-20260101-WA0043_gdbrox.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767418320/IMG-20260101-WA0043_gdbrox.jpg"
+                ]
+            },
+            construction: {
+                title: "నిర్మాణ పనులు",
+                titleEn: "Construction",
+                images: [
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419707/IMG-20260101-WA0026_tkiois.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419904/IMG-20260101-WA0028_stprxu.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419757/IMG-20260101-WA0057_qmyxmv.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419751/IMG-20260101-WA0055_qovtcm.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419750/IMG-20260101-WA0054_aytp3v.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419749/IMG-20260101-WA0053_p6nhoa.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419744/IMG-20260101-WA0051_bcgqvq.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419743/IMG-20260101-WA0050_gibfww.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419736/IMG-20260101-WA0048_hd1fjj.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419734/IMG-20260101-WA0047_vbhwqr.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419730/IMG-20260101-WA0046_xy9aa1.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419729/IMG-20260101-WA0045_ea68tv.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419723/IMG-20260101-WA0042_hziywh.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419722/IMG-20260101-WA0040_uapyuu.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419722/IMG-20260101-WA0034_mqoqjc.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419719/IMG-20260101-WA0036_cgvx9n.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419718/IMG-20260101-WA0035_bvwszt.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419715/IMG-20260101-WA0033_jgkoeu.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419708/IMG-20260101-WA0027_ilogvs.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419703/IMG-20260101-WA0020_gmlh9i.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419703/IMG-20260101-WA0019_jcjlow.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419696/IMG-20260101-WA0018_qjw3vr.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419694/IMG-20260101-WA0017_o8zaz6.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419693/IMG-20260101-WA0016_nzz9ql.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419692/IMG-20260101-WA0015_warh3z.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419691/IMG-20260101-WA0014_y5dvjp.jpg",
+                    "https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767419690/IMG-20260101-WA0013_krd2hg.jpg"
+                ]
+            },
+            pooja: {
+                title: "శివ పూజ",
+                titleEn: "Shiva Pooja",
+                images: []
+            },
+            goshala: {
+                title: "గోశాల",
+                titleEn: "Goshala",
+                images: []
+            },
+            architecture: {
+                title: "ఆలయ నిర్మాణం",
+                titleEn: "Temple Architecture",
+                images: []
+            }
+        };
+
+        // ===========================================
+        // --- CAROUSEL STATE ---
+        // ===========================================
+
+        let currentCategory = null;
+        let currentIndex = 0;
+        let currentImages = [];
+
+        // ===========================================
+        // --- CAROUSEL FUNCTIONS ---
+        // ===========================================
+
+        function openCarousel(category) {
+            const data = galleryData[category];
+            if (!data || data.images.length === 0) {
+                showComingSoon();
+                return;
+            }
+
+            currentCategory = category;
+            currentImages = data.images;
+            currentIndex = 0;
+
+            // Update title
+            document.getElementById('carouselTitle').textContent = data.title;
+
+            // Generate dot indicators
+            generateDots();
+
+            // Show first image
+            updateCarousel();
+
+            // Show modal
+            document.getElementById('carouselModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCarousel() {
+            document.getElementById('carouselModal').classList.add('hidden');
+            document.body.style.overflow = '';
+            currentCategory = null;
+            currentIndex = 0;
+            currentImages = [];
+        }
+
+        function nextImage() {
+            if (currentImages.length === 0) return;
+            currentIndex = (currentIndex + 1) % currentImages.length;
+            updateCarousel();
+        }
+
+        function prevImage() {
+            if (currentImages.length === 0) return;
+            currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+            updateCarousel();
+        }
+
+        function goToImage(index) {
+            if (index >= 0 && index < currentImages.length) {
+                currentIndex = index;
+                updateCarousel();
+            }
+        }
+
+        function updateCarousel() {
+            const img = document.getElementById('carouselImage');
+            const counter = document.getElementById('carouselCounter');
+
+            // Fade out
+            img.style.opacity = '0';
+
+            setTimeout(() => {
+                img.src = currentImages[currentIndex];
+                img.style.opacity = '1';
+            }, 150);
+
+            // Update counter
+            counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+
+            // Update dots
+            updateDots();
+        }
+
+        function generateDots() {
+            const container = document.getElementById('dotIndicators');
+            container.innerHTML = '';
+
+            // Show dots only if 10 or fewer images
+            if (currentImages.length <= 10) {
+                currentImages.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.className = 'dot-indicator w-3 h-3 rounded-full bg-white/50';
+                    dot.onclick = () => goToImage(index);
+                    container.appendChild(dot);
+                });
+            }
+        }
+
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot-indicator');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        function showComingSoon() {
+            alert('త్వరలో వస్తోంది! / Coming Soon!');
+        }
+
+        // ===========================================
+        // --- KEYBOARD NAVIGATION ---
+        // ===========================================
+
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('carouselModal').classList.contains('hidden')) {
+                if (e.key === 'ArrowRight') nextImage();
+                if (e.key === 'ArrowLeft') prevImage();
+                if (e.key === 'Escape') closeCarousel();
+            }
+        });
+
+        // ===========================================
+        // --- TOUCH SWIPE SUPPORT ---
+        // ===========================================
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.getElementById('carouselModal').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        document.getElementById('carouselModal').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextImage(); // Swipe left = next
+                } else {
+                    prevImage(); // Swipe right = prev
+                }
+            }
+        }
+
+        // ===========================================
+        // --- SHARE FUNCTIONS ---
+        // ===========================================
+
+        /**
+         * Creates a branded image with the photo and trust info
+         * Uses Web Share API to pop up native share dialog with the image
+         */
+        function shareForStatus() {
+            if (currentImages.length === 0) return;
+
+            showToast('🔄 Creating shareable image...');
+
+            const imageUrl = currentImages[currentIndex];
+            const categoryName = galleryData[currentCategory].titleEn;
+
+            // Load QR code directly (local file - no fetch needed)
+            const qrImg = new Image();
+            qrImg.src = '../images/qr original.jpg';
+
+            // Fetch only the Cloudinary image as blob (external - needs fetch to avoid tainted canvas)
+            fetch(imageUrl)
+                .then(response => response.blob())
+                .then(blob => {
+                    const objectUrl = URL.createObjectURL(blob);
+                    const img = new Image();
+
+                    img.onload = function () {
+                        generateShareImage(img, qrImg, categoryName);
+                        URL.revokeObjectURL(objectUrl);
+                    };
+
+                    img.onerror = function () {
+                        showToast('❌ Error loading image.');
+                        URL.revokeObjectURL(objectUrl);
+                    };
+
+                    img.src = objectUrl;
+                })
+                .catch(error => {
+                    console.error('Fetch error:', error);
+                    showToast('❌ Error loading image. Please try again.');
+                });
+        }
+
+        /**
+         * Generates the shareable image with all branding
+         */
+        function generateShareImage(img, qrImg, categoryName) {
+            // Create canvas - WhatsApp status ratio 9:16 (1080x1920)
+            const canvas = document.createElement('canvas');
+            canvas.width = 1080;
+            canvas.height = 1920;
+            const ctx = canvas.getContext('2d');
+
+            // --- Background Gradient ---
+            const gradient = ctx.createLinearGradient(0, 0, 0, canvas.height);
+            gradient.addColorStop(0, '#FF9933');
+            gradient.addColorStop(0.5, '#FF6600');
+            gradient.addColorStop(1, '#8B0000');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // --- Decorative top section ---
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+            ctx.beginPath();
+            ctx.arc(540, -100, 300, 0, Math.PI * 2);
+            ctx.fill();
+
+            // --- OM Symbol at top ---
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+            ctx.font = 'bold 80px serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('ॐ', canvas.width / 2, 80);
+
+            // --- Category Title ---
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 36px sans-serif';
+            ctx.fillText(galleryData[currentCategory].title, canvas.width / 2, 140);
+            ctx.font = '24px sans-serif';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fillText(categoryName, canvas.width / 2, 175);
+
+            // --- Draw the main image ---
+            const maxImgWidth = canvas.width - 80;
+            const maxImgHeight = 750;
+
+            let imgWidth = img.width;
+            let imgHeight = img.height;
+            const scale = Math.min(maxImgWidth / imgWidth, maxImgHeight / imgHeight);
+            imgWidth = imgWidth * scale;
+            imgHeight = imgHeight * scale;
+
+            const imgX = (canvas.width - imgWidth) / 2;
+            const imgY = 210;
+
+            // Image border/frame
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.15)';
+            ctx.shadowBlur = 8;
+            ctx.shadowOffsetY = 4;
+            roundRect(ctx, imgX - 6, imgY - 6, imgWidth + 12, imgHeight + 12, 8);
+            ctx.fill();
+            ctx.shadowBlur = 0;
+
+            // Draw image
+            ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
+
+            // --- Bottom branding section ---
+            const brandingY = imgY + imgHeight + 40;
+
+            // Trust Name
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 38px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('శ్రీ శివరామలింగేశ్వర దేవస్థానం', canvas.width / 2, brandingY + 30);
+            ctx.font = '30px sans-serif';
+            ctx.fillText('ఘణాపూర్', canvas.width / 2, brandingY + 70);
+
+            // Highlight text
+            ctx.fillStyle = '#FFD700';
+            ctx.font = 'bold 28px sans-serif';
+            ctx.fillText('79 అడుగుల శ్రీరామ కాంస్య విగ్రహం', canvas.width / 2, brandingY + 115);
+
+            // Decorative line
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(100, brandingY + 145);
+            ctx.lineTo(canvas.width - 100, brandingY + 145);
+            ctx.stroke();
+
+            // --- Donation Section ---
+            const donationY = brandingY + 170;
+
+            // Box background
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+            roundRect(ctx, 40, donationY, canvas.width - 80, 380, 15);
+            ctx.fill();
+
+            // Donation Header
+            ctx.fillStyle = '#FFD700';
+            ctx.font = 'bold 28px sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('💰 విరాళం ఇవ్వండి / Donate Now 💰', canvas.width / 2, donationY + 40);
+
+            // Bank Details - Left side
+            ctx.textAlign = 'left';
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 22px sans-serif';
+            const bankX = 70;
+            ctx.fillText('🏦 Bank Details:', bankX, donationY + 90);
+            ctx.font = '20px sans-serif';
+            ctx.fillText('A/C: 44715831584', bankX, donationY + 125);
+            ctx.fillText('IFSC: SBIN0020383', bankX, donationY + 155);
+            ctx.fillText('Bank: State Bank of India', bankX, donationY + 185);
+            ctx.font = 'bold 22px sans-serif';
+            ctx.fillText('📞 Contact:', bankX, donationY + 230);
+            ctx.font = '20px sans-serif';
+            ctx.fillText('9123568695, 8142436869', bankX, donationY + 265);
+
+            // QR Code - Right side
+            if (qrImg.complete && qrImg.naturalWidth > 0) {
+                const qrSize = 180;
+                const qrX = canvas.width - qrSize - 80;
+                const qrY = donationY + 80;
+                ctx.fillStyle = '#FFFFFF';
+                roundRect(ctx, qrX - 10, qrY - 10, qrSize + 20, qrSize + 20, 10);
+                ctx.fill();
+                ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
+                ctx.fillStyle = '#FFFFFF';
+                ctx.font = 'bold 18px sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Scan to Pay', qrX + qrSize / 2, qrY + qrSize + 35);
+            }
+
+            // Website
+            ctx.textAlign = 'center';
+            ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+            ctx.font = '24px sans-serif';
+            ctx.fillText('🌐 shivaramalingeshwaratrust.com', canvas.width / 2, donationY + 330);
+
+            // Jai Shri Ram
+            ctx.fillStyle = '#FFFFFF';
+            ctx.font = 'bold 32px sans-serif';
+            ctx.fillText('🙏 జై శ్రీరామ్ 🙏', canvas.width / 2, donationY + 375);
+
+            // --- Share or Download ---
+            const fileName = `shivaramalingeshwara_${categoryName.toLowerCase().replace(/\s+/g, '_')}_${Date.now()}.png`;
+
+            canvas.toBlob(function (blob) {
+                const file = new File([blob], fileName, { type: 'image/png' });
+
+                // ALWAYS download the image first
+                const link = document.createElement('a');
+                link.download = fileName;
+                link.href = URL.createObjectURL(blob);
+                link.click();
+                URL.revokeObjectURL(link.href);
+
+                // ALSO show share dialog if available
+                if (navigator.canShare && navigator.canShare({ files: [file] })) {
+                    // Small delay to ensure download starts first
+                    setTimeout(() => {
+                        navigator.share({
+                            title: 'శ్రీ శివరామలింగేశ్వర దేవస్థానం',
+                            text: `🙏 శ్రీ శివరామలింగేశ్వర దేవస్థానం 🙏
+━━━━━━━━━━━━━━━━━
+📍 ఘణాపూర్, తెలంగాణ
+🛕 79 అడుగుల శ్రీరామ కాంస్య విగ్రహం
+
+🏦 Bank: SBI | A/C: 44715831584
+📋 IFSC: SBIN0020383
+📞 9123568695, 8142436869
+
+🌐 shivaramalingeshwaratrust.com
+🙏 జై శ్రీరామ్ 🙏`,
+                            files: [file],
+                            url: 'https://shivaramalingeshwaratrust.com'
+                        })
+                            .then(() => showToast('✅ Downloaded & Shared!'))
+                            .catch(err => {
+                                // User cancelled share - that's OK, image is already downloaded
+                                showToast('✅ Image downloaded!');
+                            });
+                    }, 500);
+                } else {
+                    showToast('✅ Image downloaded! Share on WhatsApp Status');
+                }
+            }, 'image/png');
+        }
+
+        /**
+         * Fallback download when Web Share API is not available
+         */
+        function downloadFallback(canvas, fileName) {
+            const link = document.createElement('a');
+            link.download = fileName;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+            showToast('✅ Image downloaded! Share on WhatsApp Status');
+        }
+
+        /**
+         * Helper: Draw rounded rectangle
+         */
+        function roundRect(ctx, x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+        }
+
+        function showToast(message) {
+            const existingToast = document.getElementById('toast');
+            if (existingToast) existingToast.remove();
+
+            const toast = document.createElement('div');
+            toast.id = 'toast';
+            toast.className = 'fixed bottom-32 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 px-6 py-3 rounded-full shadow-lg z-[110] font-bold text-sm';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 0.3s';
+                setTimeout(() => toast.remove(), 300);
+            }, 3000);
+        }
+    </script>
 </body>
 
 </html>

@@ -161,6 +161,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const audioText = document.getElementById('audioText');
     const welcomeOverlay = document.getElementById('welcomeOverlay');
 
+    // Only run audio logic if audio elements exist on the page
+    if (!omAudio || !audioIcon || !audioText) {
+        return; // Exit early if audio elements don't exist
+    }
+
     // Muted icon SVG path
     const mutedIconPath = 'M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2';
     const unmutedIconPath = 'M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z';
@@ -204,17 +209,19 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     // Welcome Overlay Click - Start audio and hide overlay
-    welcomeOverlay.addEventListener('click', function () {
-        // Fade out overlay
-        welcomeOverlay.style.opacity = '0';
-        setTimeout(() => {
-            welcomeOverlay.style.display = 'none';
-        }, 500);
+    if (welcomeOverlay) {
+        welcomeOverlay.addEventListener('click', function () {
+            // Fade out overlay
+            welcomeOverlay.style.opacity = '0';
+            setTimeout(() => {
+                welcomeOverlay.style.display = 'none';
+            }, 500);
 
-        // Enable and start audio
-        isAudioPlaying = true;
-        playAudioWithGap();
-    });
+            // Enable and start audio
+            isAudioPlaying = true;
+            playAudioWithGap();
+        });
+    }
 });
 
 // ===========================================
