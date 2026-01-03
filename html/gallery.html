@@ -564,29 +564,41 @@
 
             const imageUrl = currentImages[currentIndex];
             const categoryName = galleryData[currentCategory].titleEn;
+            const qrUrl = 'https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767429124/qr_original_v1yjdx.jpg';
 
-            // Load QR code directly (local file - no fetch needed)
-            const qrImg = new Image();
-            qrImg.src = '../images/qr original.jpg';
+            // Fetch both images as blobs from Cloudinary
+            Promise.all([
+                fetch(imageUrl).then(r => r.blob()),
+                fetch(qrUrl).then(r => r.blob()).catch(() => null)
+            ])
+                .then(([mainBlob, qrBlob]) => {
+                    const mainUrl = URL.createObjectURL(mainBlob);
+                    const qrObjUrl = qrBlob ? URL.createObjectURL(qrBlob) : null;
 
-            // Fetch only the Cloudinary image as blob (external - needs fetch to avoid tainted canvas)
-            fetch(imageUrl)
-                .then(response => response.blob())
-                .then(blob => {
-                    const objectUrl = URL.createObjectURL(blob);
                     const img = new Image();
+                    const qrImg = new Image();
+                    let mainReady = false, qrReady = false;
 
-                    img.onload = function () {
-                        generateShareImage(img, qrImg, categoryName);
-                        URL.revokeObjectURL(objectUrl);
+                    const tryGenerate = () => {
+                        if (mainReady && qrReady) {
+                            generateShareImage(img, qrImg, categoryName);
+                            URL.revokeObjectURL(mainUrl);
+                            if (qrObjUrl) URL.revokeObjectURL(qrObjUrl);
+                        }
                     };
 
-                    img.onerror = function () {
-                        showToast('❌ Error loading image.');
-                        URL.revokeObjectURL(objectUrl);
-                    };
+                    img.onload = () => { mainReady = true; tryGenerate(); };
+                    img.onerror = () => { showToast('❌ Error loading image.'); };
 
-                    img.src = objectUrl;
+                    qrImg.onload = () => { qrReady = true; tryGenerate(); };
+                    qrImg.onerror = () => { qrReady = true; tryGenerate(); };
+
+                    img.src = mainUrl;
+                    if (qrObjUrl) {
+                        qrImg.src = qrObjUrl;
+                    } else {
+                        qrReady = true;
+                    }
                 })
                 .catch(error => {
                     console.error('Fetch error:', error);
