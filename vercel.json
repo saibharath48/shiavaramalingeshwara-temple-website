@@ -47,14 +47,6 @@
     {
       "source": "/gallery",
       "destination": "/html/gallery.html"
-    },
-    {
-      "source": "/team.html",
-      "destination": "/html/team.html"
-    },
-    {
-      "source": "/team",
-      "destination": "/html/team.html"
     }
   ]
 }
