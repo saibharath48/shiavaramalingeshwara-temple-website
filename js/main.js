@@ -36,7 +36,22 @@ const translations = {
         menuAbout: "మా గురించి",
         menuEvents: "కార్యక్రమాలు",
         menuFestivals: "పండుగలు",
-        menuGallery: "చిత్రమాలిక"
+        menuGallery: "చిత్రమాలిక",
+        menuDonation: "విరాళం",
+        // About Page
+        aboutPageTitle: "🙏 ధర్మ సంరక్షణ - మనందరి బాధ్యత 🙏",
+        aboutPageSubtitle: "(Our Dharma, Our Responsibility)",
+        aboutSubHeading: "✨ గుప్పెడు దానం - కోటి జన్మల పుణ్యఫలం ✨",
+        aboutIntro: 'ఆలయ నిర్మాణం అంటే కేవలం రాళ్లు, సిమెంటుతో కట్టే నిర్మాణం కాదు; అది మన <strong class="text-temple-red">సనాతన ధర్మానికి</strong>, రాబోయే తరాల సంస్కృతికి వేస్తున్న బలమైన పునాది. శాస్త్రాల ప్రకారం, దేవాలయ నిర్మాణానికి భక్తితో ఒక చిన్న ఇటుకను సమర్పించినా, అది సాక్షాత్తు <strong class="text-saffron-dark">కైలాస ప్రాప్తికి సోపానం</strong> అవుతుందని పెద్దల మాట.',
+        aboutMissionTitle: "🛕 మా బృహత్తర సంకల్పం",
+        aboutMissionText: '<strong class="text-temple-red">శ్రీరామలింగేశ్వర ట్రస్ట్</strong> ఆధ్వర్యంలో, చరిత్రలో నిలిచిపోయేలా <strong class="text-saffron-dark">79 అడుగుల భారీ శ్రీరాముని కాంస్య విగ్రహాన్ని</strong> మరియు శ్రీరామ, శివ, దుర్గా మాతల ఆలయాలను నిర్మిస్తున్నాము. ఇంతటి బృహత్తర యజ్ఞానికి భారీ వనరులు అవసరం. ఇది ఏ ఒక్కరితోనో సాధ్యమయ్యేది కాదు, <strong>మనందరి సమిష్టి కృషి, ఐకమత్యంతోనే సాకారమవుతుంది</strong>.',
+        aboutSquirrelStory: '<span class="text-2xl">🐿️</span> రాముడి వారధి నిర్మాణంలో ఉడత చేసిన సాయం ఎలా చరిత్రలో నిలిచిపోయిందో, ఈ పవిత్ర కార్యంలో <strong class="text-temple-red">మీరు చేసే చిన్న సహాయం కూడా ఒక పవిత్ర శిలగా మారి కలకాలం నిలిచిపోతుంది</strong>. మీ శక్తిమేరకు విరాళం అందించి, ఆ శ్రీ సీతారామచంద్రుల మరియు పరమేశ్వరుని కృపకు పాత్రులు కండి.',
+        aboutGitaTitle: "📜 సాత్త్విక దానం - భగవద్గీత సారం 📜",
+        aboutGitaMeaning: '<p>"ఏ దానమైతే ప్రతిఫలాన్ని ఆశించకుండా, కేవలం కర్తవ్య భావంతో, సరైన సమయంలో, సరైన ప్రదేశంలో, మరియు అర్హుడైన వ్యక్తికి ఇవ్వబడుతుందో, అటువంటి దానాన్ని <strong class="text-marigold">సాత్త్విక దానం</strong> అని అంటారు."</p>',
+        aboutPromiseTitle: "✅ మా హామీ",
+        aboutPromiseText: 'మేము చేపట్టిన ఈ ప్రయత్నం పూర్తిగా <strong class="text-green-700">ధర్మబద్ధమైనది, పారదర్శకమైనది మరియు నిస్వార్థమైనది</strong>. మీరు అందించే ప్రతి రూపాయి కేవలం సనాతన ధర్మ రక్షణకు మరియు ఈ ఆలయ నిర్మాణ పనులకు మాత్రమే వినియోగించబడుతుందని మేము మీకు హామీ ఇస్తున్నాము.',
+        aboutCtaText: "🙏 రండి.. ఈ ధర్మ యజ్ఞంలో సమిధలవుదాం.. మన సంస్కృతిని కాపాడుకుందాం 🙏",
+        aboutMembersTitle: "👥 మా ట్రస్ట్ సభ్యులు / Our Trust Members 👥"
     },
     en: {
         navTitle: "Shivaramalingeshwara Trust",
@@ -65,7 +80,22 @@ const translations = {
         menuAbout: "About Us",
         menuEvents: "Events",
         menuFestivals: "Festivals",
-        menuGallery: "Gallery"
+        menuGallery: "Gallery",
+        menuDonation: "Donation",
+        // About Page
+        aboutPageTitle: "🙏 Dharma Protection - Our Responsibility 🙏",
+        aboutPageSubtitle: "(Our Dharma, Our Responsibility)",
+        aboutSubHeading: "✨ A Handful of Donation - Merit of Crores of Births ✨",
+        aboutIntro: 'Temple construction is not just building with stones and cement; it is a strong foundation for our <strong class="text-temple-red">Sanatana Dharma</strong>, for the culture of future generations. According to scriptures, even if one brick is offered devotionally for temple construction, it becomes <strong class="text-saffron-dark">a stepping stone to Kailasa</strong>, say the elders.',
+        aboutMissionTitle: "🛕 Our Grand Vision",
+        aboutMissionText: 'Under the auspices of <strong class="text-temple-red">Shivaramalingeshwara Trust</strong>, we are constructing a <strong class="text-saffron-dark">massive 79-foot bronze statue of Lord Rama</strong> that will stand in history, along with Sri Rama, Shiva, and Durga Mata temples. Such a grand endeavor requires vast resources. This cannot be achieved by one person alone, <strong>it can only be realized through our collective effort and unity</strong>.',
+        aboutSquirrelStory: '<span class="text-2xl">🐿️</span> Just as the squirrel\'s small contribution in building Rama\'s bridge is remembered in history, <strong class="text-temple-red">your small help in this sacred work will also become a holy stone that will last forever</strong>. Donate according to your capacity and receive the blessings of Sri Sita Ramachandra and Lord Parameshwara.',
+        aboutGitaTitle: "📜 Sattvic Donation - Essence of Bhagavad Gita 📜",
+        aboutGitaMeaning: '<p>"That donation which is given without expectation of reward, with a sense of duty, at the right time, in the right place, and to a worthy person - such donation is called <strong class="text-marigold">Sattvic Donation</strong>."</p>',
+        aboutPromiseTitle: "✅ Our Promise",
+        aboutPromiseText: 'The effort we have undertaken is completely <strong class="text-green-700">dharmic, transparent, and selfless</strong>. Every rupee you donate will be used only for Sanatana Dharma protection and temple construction work - this is our promise to you.',
+        aboutCtaText: "🙏 Come.. Let us be part of this Dharma Yajna.. Let us protect our culture 🙏",
+        aboutMembersTitle: "👥 Our Trust Members 👥"
     }
 };
 
@@ -81,45 +111,71 @@ function toggleLanguage() {
     // Get Data
     const data = translations[currentLang];
 
-    // Update DOM Elements
-    document.getElementById('nav-title').innerText = data.navTitle;
-    document.getElementById('lang-btn-text').innerText = data.langBtn;
-    document.getElementById('hero-subtitle').innerText = data.heroSubtitle;
-    document.getElementById('hero-title').innerHTML = data.heroTitle;
-    document.getElementById('hero-highlight').innerText = data.heroHighlight;
-    document.getElementById('hero-cta').innerText = data.heroCta;
+    // Helper function to safely update element content
+    const safeUpdate = (id, content, useInnerHTML = false) => {
+        const element = document.getElementById(id);
+        if (element) {
+            if (useInnerHTML) {
+                element.innerHTML = content;
+            } else {
+                element.innerText = content;
+            }
+        }
+    };
 
-    document.getElementById('about-title').innerText = data.aboutTitle;
-    document.getElementById('about-mission').innerText = data.aboutMission;
-    document.getElementById('about-temples-title').innerText = data.aboutTemplesTitle;
-    document.getElementById('temple-1').innerText = data.temple1;
-    document.getElementById('temple-2').innerText = data.temple2;
-    document.getElementById('temple-3').innerText = data.temple3;
-    document.getElementById('about-highlight-badge').innerText = data.aboutHighlightBadge;
-    document.getElementById('about-highlight-title').innerText = data.aboutHighlightTitle;
-    document.getElementById('about-highlight-text').innerHTML = data.aboutHighlightText;
+    // Update DOM Elements with null checks
+    safeUpdate('nav-title', data.navTitle);
+    safeUpdate('lang-btn-text', data.langBtn);
+    safeUpdate('hero-subtitle', data.heroSubtitle);
+    safeUpdate('hero-title', data.heroTitle, true);
+    safeUpdate('hero-highlight', data.heroHighlight);
+    safeUpdate('hero-cta', data.heroCta);
 
-    document.getElementById('donate-header').innerText = data.donateHeader;
-    document.getElementById('donate-sub').innerText = data.donateSub;
-    document.getElementById('label-name').innerText = data.labelName;
-    document.getElementById('label-amount').innerText = data.labelAmount;
-    document.getElementById('btn-donate').innerText = data.btnDonate;
-    document.getElementById('donate-disclaimer').innerText = data.donateDisclaimer;
-    document.getElementById('footer-trust').innerText = data.footerTrust;
-    document.getElementById('deity-image').alt = data.deityAlt;
+    safeUpdate('about-title', data.aboutTitle);
+    safeUpdate('about-mission', data.aboutMission);
+    safeUpdate('about-temples-title', data.aboutTemplesTitle);
+    safeUpdate('temple-1', data.temple1);
+    safeUpdate('temple-2', data.temple2);
+    safeUpdate('temple-3', data.temple3);
+    safeUpdate('about-highlight-badge', data.aboutHighlightBadge);
+    safeUpdate('about-highlight-title', data.aboutHighlightTitle);
+    safeUpdate('about-highlight-text', data.aboutHighlightText, true);
+
+    safeUpdate('donate-header', data.donateHeader);
+    safeUpdate('donate-sub', data.donateSub);
+    safeUpdate('label-name', data.labelName);
+    safeUpdate('label-amount', data.labelAmount);
+    safeUpdate('btn-donate', data.btnDonate);
+    safeUpdate('donate-disclaimer', data.donateDisclaimer);
+    safeUpdate('footer-trust', data.footerTrust);
+
+    // Handle deity image alt attribute safely
+    const deityImage = document.getElementById('deity-image');
+    if (deityImage) {
+        deityImage.alt = data.deityAlt;
+    }
 
     // Sidebar Translations
-    const menuAbout = document.getElementById('menu-about');
-    if (menuAbout) menuAbout.innerText = data.menuAbout;
+    safeUpdate('menu-about', data.menuAbout);
+    safeUpdate('menu-events', data.menuEvents);
+    safeUpdate('menu-festivals', data.menuFestivals);
+    safeUpdate('menu-gallery', data.menuGallery);
+    safeUpdate('menu-donation', data.menuDonation);
 
-    const menuEvents = document.getElementById('menu-events');
-    if (menuEvents) menuEvents.innerText = data.menuEvents;
-
-    const menuFestivals = document.getElementById('menu-festivals');
-    if (menuFestivals) menuFestivals.innerText = data.menuFestivals;
-
-    const menuGallery = document.getElementById('menu-gallery');
-    if (menuGallery) menuGallery.innerText = data.menuGallery;
+    // About Page Translations
+    safeUpdate('about-page-title', data.aboutPageTitle);
+    safeUpdate('about-page-subtitle', data.aboutPageSubtitle);
+    safeUpdate('about-sub-heading', data.aboutSubHeading);
+    safeUpdate('about-intro', data.aboutIntro, true);
+    safeUpdate('about-mission-title', data.aboutMissionTitle, true);
+    safeUpdate('about-mission-text', data.aboutMissionText, true);
+    safeUpdate('about-squirrel-story', data.aboutSquirrelStory, true);
+    safeUpdate('about-gita-title', data.aboutGitaTitle);
+    safeUpdate('about-gita-meaning', data.aboutGitaMeaning, true);
+    safeUpdate('about-promise-title', data.aboutPromiseTitle, true);
+    safeUpdate('about-promise-text', data.aboutPromiseText, true);
+    safeUpdate('about-cta-text', data.aboutCtaText);
+    safeUpdate('about-members-title', data.aboutMembersTitle);
 
     // Change HTML Lang attribute
     document.documentElement.lang = currentLang;
@@ -422,10 +478,10 @@ function showUTRSection() {
 }
 
 /**
- * Submits donation details with optional UTR
- * Shows confirmation dialog if UTR is empty
+ * Submits donation details with mandatory UTR
+ * UTR is required to generate the donation slip
  */
-function submitDonation() {
+async function submitDonation() {
     // First validate the form
     const formData = validateDonationForm(false);
     if (!formData) return;
@@ -433,16 +489,18 @@ function submitDonation() {
     // Get UTR value
     const utrNumber = document.getElementById('utrNumber')?.value.trim() || '';
 
-    // If UTR is empty, show confirmation dialog
+    // UTR is mandatory - validate it
     if (!utrNumber) {
-        const proceed = confirm(
-            'మీరు UTR నంబర్ నమోదు చేయలేదు. కొనసాగించాలా?\n\n' +
-            'You have not entered the UTR number. Proceed anyway?'
-        );
-        if (!proceed) {
-            document.getElementById('utrNumber')?.focus();
-            return;
-        }
+        alert('దయచేసి UTR నంబర్ నమోదు చేయండి\n\nPlease enter the UTR/Transaction number to generate your donation slip.');
+        document.getElementById('utrNumber')?.focus();
+        return;
+    }
+
+    // Validate UTR length (typically 12-22 characters)
+    if (utrNumber.length < 6) {
+        alert('UTR నంబర్ చాలా చిన్నది. దయచేసి సరైన UTR నమోదు చేయండి.\n\nUTR number seems too short. Please enter a valid UTR number.');
+        document.getElementById('utrNumber')?.focus();
+        return;
     }
 
     // Collect all data
@@ -451,43 +509,84 @@ function submitDonation() {
         mobile: formData.mobile,
         village: formData.village,
         amount: formData.amount || 'Not specified',
-        utr: utrNumber || 'Not provided',
+        utr: utrNumber,
         timestamp: new Date().toISOString()
     };
 
+
     console.log('Donation submitted:', donationData);
 
-    // Send to Google Sheets
-    sendToGoogleSheets(donationData);
+    // Show loading overlay
+    showLoadingOverlay();
+
+    // Send to Google Sheets and wait for completion
+    await sendToGoogleSheets(donationData);
+
+    // Hide loading overlay
+    hideLoadingOverlay();
 
     // Show success message
     showSuccessMessage(donationData);
 }
 
 /**
+ * Shows loading overlay during submission
+ */
+function showLoadingOverlay() {
+    const loadingHTML = `
+        <div id="loadingOverlay" class="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center">
+            <div class="bg-white rounded-2xl p-8 text-center shadow-2xl">
+                <div class="w-16 h-16 border-4 border-saffron border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+                <p class="font-heading text-temple-red text-lg">Submitting...</p>
+                <p class="text-gray-500 text-sm mt-1">దయచేసి వేచి ఉండండి</p>
+            </div>
+        </div>
+    `;
+    document.body.insertAdjacentHTML('beforeend', loadingHTML);
+}
+
+/**
+ * Hides loading overlay
+ */
+function hideLoadingOverlay() {
+    const overlay = document.getElementById('loadingOverlay');
+    if (overlay) {
+        overlay.remove();
+    }
+}
+
+/**
  * Sends donation data to Google Sheets
  * @param {object} data - Donation data to save
+ * @returns {Promise} - Resolves when data is sent
  */
 function sendToGoogleSheets(data) {
-    if (!CONFIG.googleSheetsUrl) {
-        console.warn('Google Sheets URL not configured');
-        return;
-    }
+    return new Promise((resolve, reject) => {
+        if (!CONFIG.googleSheetsUrl) {
+            console.warn('Google Sheets URL not configured');
+            resolve(); // Resolve anyway to continue flow
+            return;
+        }
 
-    fetch(CONFIG.googleSheetsUrl, {
-        method: 'POST',
-        mode: 'no-cors', // Required for Google Apps Script
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data)
-    })
-        .then(() => {
-            console.log('Donation data sent to Google Sheets successfully');
+        fetch(CONFIG.googleSheetsUrl, {
+            method: 'POST',
+            mode: 'no-cors', // Required for Google Apps Script
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data)
         })
-        .catch(error => {
-            console.error('Error sending to Google Sheets:', error);
-        });
+            .then(() => {
+                console.log('Donation data sent to Google Sheets successfully');
+                resolve();
+            })
+            .catch(error => {
+                console.error('Error sending to Google Sheets:', error);
+                // Still resolve to continue with success message
+                // (no-cors mode doesn't provide response info anyway)
+                resolve();
+            });
+    });
 }
 
 /**
@@ -551,9 +650,42 @@ function closeSuccessModal() {
 /**
  * Generates and downloads a 9:16 WhatsApp status image
  * Filename format: shriramalingeshwaratrust_personname.png
- * @param {object} data - Donation data (name, mobile, village, amount)
+ * @param {object} data - Donation data (name, mobile, village, amount, utr)
  */
 function generateDonationImage(data) {
+    // Load QR code image first
+    const qrUrl = 'https://res.cloudinary.com/ds7aq0v6b/image/upload/v1767693196/WhatsApp_Image_2026-01-05_at_8.50.20_PM_xsnn3n.jpg';
+
+    fetch(qrUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            const qrObjUrl = URL.createObjectURL(blob);
+            const qrImg = new Image();
+
+            qrImg.onload = () => {
+                generateDonationCanvas(data, qrImg);
+                URL.revokeObjectURL(qrObjUrl);
+            };
+
+            qrImg.onerror = () => {
+                // Generate without QR if loading fails
+                generateDonationCanvas(data, null);
+            };
+
+            qrImg.src = qrObjUrl;
+        })
+        .catch(() => {
+            // Generate without QR if fetch fails
+            generateDonationCanvas(data, null);
+        });
+}
+
+/**
+ * Generates the donation canvas with all elements
+ * @param {object} data - Donation data
+ * @param {Image|null} qrImg - QR code image or null
+ */
+function generateDonationCanvas(data, qrImg) {
     // Create canvas (9:16 ratio - 1080x1920)
     const canvas = document.createElement('canvas');
     canvas.width = 1080;
@@ -583,23 +715,145 @@ function generateDonationImage(data) {
 
     // --- OM Symbol at top ---
     ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
-    ctx.font = 'bold 180px serif';
+    ctx.font = 'bold 140px serif';
     ctx.textAlign = 'center';
-    ctx.fillText('ॐ', canvas.width / 2, 180);
+    ctx.fillText('ॐ', canvas.width / 2, 140);
 
     // --- Title Box Background ---
     ctx.fillStyle = 'rgba(139, 0, 0, 0.85)';
-    roundRect(ctx, 40, 240, canvas.width - 80, 100, 20);
+    roundRect(ctx, 40, 180, canvas.width - 80, 80, 20);
     ctx.fill();
 
     // --- Title: 79 అడుగుల శ్రీరామ కాంస్య విగ్రహం ---
     ctx.fillStyle = '#FFD700';
-    ctx.font = 'bold 48px sans-serif';
-    ctx.fillText('79 అడుగుల శ్రీరామ కాంస్య విగ్రహం', canvas.width / 2, 310);
+    ctx.font = 'bold 40px sans-serif';
+    ctx.fillText('79 అడుగుల శ్రీరామ కాంస్య విగ్రహం', canvas.width / 2, 235);
 
-    // --- Bhagavad Gita Shloka ---
+    // --- Temple Name ---
     ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 38px sans-serif';
+    ctx.fillText('శ్రీ శివరామలింగేశ్వర దేవస్థానం', canvas.width / 2, 320);
     ctx.font = '32px sans-serif';
+    ctx.fillText('ఘణాపూర్', canvas.width / 2, 365);
+
+    // --- Decorative Line ---
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(150, 400);
+    ctx.lineTo(canvas.width - 150, 400);
+    ctx.stroke();
+
+    // --- Donor Info Box ---
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.12)';
+    roundRect(ctx, 60, 430, canvas.width - 120, 420, 30);
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.lineWidth = 2;
+    roundRect(ctx, 60, 430, canvas.width - 120, 420, 30);
+    ctx.stroke();
+
+    // --- Donor Header ---
+    ctx.fillStyle = '#FFD700';
+    ctx.font = 'bold 36px sans-serif';
+    ctx.fillText('🙏 దాత వివరాలు / Donor Details 🙏', canvas.width / 2, 490);
+
+    // --- Donor Name ---
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 48px sans-serif';
+    ctx.fillText(data.name, canvas.width / 2, 570);
+
+    // --- Donor Village ---
+    ctx.font = '36px sans-serif';
+    ctx.fillText(data.village, canvas.width / 2, 630);
+
+    // --- Donor Mobile ---
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
+    ctx.font = '32px sans-serif';
+    ctx.fillText('📞 ' + data.mobile, canvas.width / 2, 690);
+
+    // --- Amount (only if >= 1500) ---
+    if (data.amount && data.amount !== 'Not specified' && parseFloat(data.amount) >= 1500) {
+        ctx.fillStyle = '#FFD700';
+        ctx.font = 'bold 44px sans-serif';
+        ctx.fillText('₹' + data.amount + ' విరాళం', canvas.width / 2, 760);
+    }
+
+    // --- Bank Details & QR Code Section ---
+    const bankSectionY = 890;
+
+    // Box background
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.15)';
+    roundRect(ctx, 40, bankSectionY, canvas.width - 80, 380, 15);
+    ctx.fill();
+
+    // Section Header
+    ctx.fillStyle = '#FFD700';
+    ctx.font = 'bold 28px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('💰 విరాళం ఇవ్వండి / Donate Now 💰', canvas.width / 2, bankSectionY + 40);
+
+    // Bank Details - Left side
+    ctx.textAlign = 'left';
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = 'bold 24px sans-serif';
+    const bankX = 70;
+    ctx.fillText('🏦 Bank Details:', bankX, bankSectionY + 90);
+    ctx.font = '22px sans-serif';
+    ctx.fillText('A/C: 44715831584', bankX, bankSectionY + 125);
+    ctx.fillText('IFSC: SBIN0020383', bankX, bankSectionY + 155);
+    ctx.fillText('Bank: State Bank of India', bankX, bankSectionY + 185);
+
+    ctx.font = 'bold 24px sans-serif';
+    ctx.fillText('📞 Contact:', bankX, bankSectionY + 230);
+    ctx.font = '22px sans-serif';
+    ctx.fillText('9912356869, 8142436869', bankX, bankSectionY + 265);
+
+    // UPI ID
+    ctx.font = 'bold 20px sans-serif';
+    ctx.fillText('UPI: shivaramalingeshwaratrust@sbi', bankX, bankSectionY + 310);
+
+    // QR Code - Right side
+    if (qrImg && qrImg.complete && qrImg.naturalWidth > 0) {
+        const qrSize = 180;
+        const qrX = canvas.width - qrSize - 80;
+        const qrY = bankSectionY + 70;
+
+        // QR background
+        ctx.fillStyle = '#FFFFFF';
+        roundRect(ctx, qrX - 10, qrY - 10, qrSize + 20, qrSize + 20, 10);
+        ctx.fill();
+
+        // Draw QR
+        ctx.drawImage(qrImg, qrX, qrY, qrSize, qrSize);
+
+        // "Scan to Pay" label
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 18px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('Scan to Pay', qrX + qrSize / 2, qrY + qrSize + 35);
+    }
+
+    // Website
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+    ctx.font = '24px sans-serif';
+    ctx.fillText('🌐 shivaramalingeshwaratrust.com', canvas.width / 2, bankSectionY + 355);
+
+    // --- Bhagavad Gita Shloka Section ---
+    const shlokaY = bankSectionY + 410;
+
+    ctx.fillStyle = 'rgba(139, 0, 0, 0.6)';
+    roundRect(ctx, 60, shlokaY, canvas.width - 120, 280, 20);
+    ctx.fill();
+
+    ctx.fillStyle = '#FFD700';
+    ctx.font = 'bold 26px sans-serif';
+    ctx.fillText('📜 సాత్త్విక దానం - భగవద్గీత 17.20 📜', canvas.width / 2, shlokaY + 40);
+
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '24px sans-serif';
 
     const shlokaLines = [
         '"ఏ దానమైతే ప్రతిఫలాన్ని ఆశించకుండా,',
@@ -609,82 +863,29 @@ function generateDonationImage(data) {
         'సాత్త్విక దానం అని అంటారు."'
     ];
 
-    let yPos = 420;
+    let yPos = shlokaY + 90;
     shlokaLines.forEach(line => {
         ctx.fillText(line, canvas.width / 2, yPos);
-        yPos += 50;
+        yPos += 38;
     });
-
-    // --- Bhagavad Gita Reference ---
-    ctx.fillStyle = '#FFD700';
-    ctx.font = 'bold 36px sans-serif';
-    ctx.fillText('— భగవద్గీత 17.20', canvas.width / 2, yPos + 40);
-
-    // --- Decorative Line ---
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
-    ctx.lineWidth = 2;
-    ctx.beginPath();
-    ctx.moveTo(150, 780);
-    ctx.lineTo(canvas.width - 150, 780);
-    ctx.stroke();
-
-    // --- Temple Name ---
-    ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 44px sans-serif';
-    ctx.fillText('శ్రీ రామలింగేశ్వర దేవస్థానం', canvas.width / 2, 860);
-    ctx.font = '38px sans-serif';
-    ctx.fillText('ఘణాపూర్', canvas.width / 2, 920);
-
-    // --- Donor Info Box ---
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.12)';
-    roundRect(ctx, 60, 1000, canvas.width - 120, 500, 30);
-    ctx.fill();
-
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.3)';
-    ctx.lineWidth = 2;
-    roundRect(ctx, 60, 1000, canvas.width - 120, 500, 30);
-    ctx.stroke();
-
-    // --- Donor Header ---
-    ctx.fillStyle = '#FFD700';
-    ctx.font = 'bold 40px sans-serif';
-    ctx.fillText('🙏 దాత వివరాలు 🙏', canvas.width / 2, 1080);
-
-    // --- Donor Name ---
-    ctx.fillStyle = '#FFFFFF';
-    ctx.font = 'bold 52px sans-serif';
-    ctx.fillText(data.name, canvas.width / 2, 1180);
-
-    // --- Donor Village ---
-    ctx.font = '40px sans-serif';
-    ctx.fillText(data.village, canvas.width / 2, 1260);
-
-    // --- Donor Mobile ---
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)';
-    ctx.font = '36px sans-serif';
-    ctx.fillText('📞 ' + data.mobile, canvas.width / 2, 1340);
-
-    // --- Amount (only if >= 1000) ---
-    if (data.amount && data.amount !== 'Not specified' && parseFloat(data.amount) >= 1000) {
-        ctx.fillStyle = '#FFD700';
-        ctx.font = 'bold 50px sans-serif';
-        ctx.fillText('₹' + data.amount + ' విరాళం', canvas.width / 2, 1440);
-    }
 
     // --- Trust Info ---
     ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
-    ctx.font = '30px sans-serif';
-    ctx.fillText('శివరామలింగేశ్వర ట్రస్ట్', canvas.width / 2, 1620);
     ctx.font = '26px sans-serif';
-    ctx.fillText('Reg No: 37/2025 | Ghanapur', canvas.width / 2, 1670);
+    ctx.fillText('శివరామలింగేశ్వర ట్రస్ట్ | Reg No: 37/2025', canvas.width / 2, 1730);
 
     // --- Thank You Message ---
     ctx.fillStyle = '#FFFFFF';
     ctx.font = 'bold 42px sans-serif';
-    ctx.fillText('🙏 జై శ్రీరామ్ 🙏', canvas.width / 2, 1800);
+    ctx.fillText('🙏 జై శ్రీరామ్ 🙏', canvas.width / 2, 1820);
+
+    // --- Timestamp ---
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.font = '18px sans-serif';
+    const now = new Date();
+    ctx.fillText(now.toLocaleString('en-IN'), canvas.width / 2, 1880);
 
     // --- Download Image ---
-    // Filename: shriramalingeshwaratrust_personname.png
     const sanitizedName = data.name.replace(/\s+/g, '').replace(/[^a-zA-Z0-9\u0C00-\u0C7F]/g, '');
     const filename = `shriramalingeshwaratrust_${sanitizedName}.png`;
 
@@ -712,4 +913,28 @@ function roundRect(ctx, x, y, width, height, radius) {
     ctx.quadraticCurveTo(x, y, x + radius, y);
     ctx.closePath();
 }
+
+// ===========================================
+// --- DYNAMIC COPYRIGHT YEAR ---
+// ===========================================
+
+/**
+ * Updates the copyright year in the footer to the current year
+ * Works with both id="currentYear" and class="currentYear"
+ */
+document.addEventListener('DOMContentLoaded', function () {
+    const currentYear = new Date().getFullYear();
+
+    // Update element with ID
+    const yearElementById = document.getElementById('currentYear');
+    if (yearElementById) {
+        yearElementById.textContent = currentYear;
+    }
+
+    // Update all elements with class
+    const yearElementsByClass = document.querySelectorAll('.currentYear');
+    yearElementsByClass.forEach(element => {
+        element.textContent = currentYear;
+    });
+});
 

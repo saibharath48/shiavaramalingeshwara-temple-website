@@ -4,7 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Shivaramalingeshwara Trust</title>
+    <title>About Us - Shivaramalingeshwara Trust | Our Mission & Vision</title>
+    <meta name="description"
+        content="Learn about Shivaramalingeshwara Trust's mission to build a 79-foot Sri Rama bronze statue in Ghanapur. Meet our trust members and understand our dharmic vision.">
+    <meta name="keywords"
+        content="Shivaramalingeshwara Trust, About Us, Trust Members, Temple Mission, 79 feet Rama Statue, Ghanapur, Telangana, ధర్మ సంరక్షణ, శివరామలింగేశ్వర ట్రస్ట్">
+    <meta name="author" content="Shivaramalingeshwara Trust">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shivaramalingeshwaratrust.com/html/about.html">
+    <meta property="og:title" content="About Us - Shivaramalingeshwara Trust">
+    <meta property="og:description"
+        content="Our mission to build a 79-foot Sri Rama bronze statue. Meet our dedicated trust members and join our dharmic cause.">
+    <meta property="og:image" content="https://shivaramalingeshwaratrust.com/images/Capture.png">
+    <meta property="og:locale" content="te_IN">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us - Shivaramalingeshwara Trust">
+    <meta name="twitter:description"
+        content="Our mission to build a 79-foot Sri Rama bronze statue in Ghanapur, Telangana.">
+    <meta name="twitter:image" content="https://shivaramalingeshwaratrust.com/images/Capture.png">
+
     <link rel="icon" type="image/png" href="../images/favicon.png">
 
     <!-- Tailwind CSS -->
@@ -51,9 +74,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo / Name -->
-                <div class="flex-shrink-0 flex items-center gap-2">
+                <div class="flex-shrink-0 flex items-center gap-2 min-w-0 flex-1 max-w-[60%] sm:max-w-none">
                     <button onclick="toggleMenu()"
-                        class="focus:outline-none transition transform hover:scale-110 active:scale-95"
+                        class="focus:outline-none transition transform hover:scale-110 active:scale-95 flex-shrink-0"
                         title="Open Menu">
                         <div
                             class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center text-white shadow-md">
@@ -64,17 +87,18 @@
                             </svg>
                         </div>
                     </button>
-                    <span class="font-heading text-temple-red text-lg md:text-xl lg:text-2xl cursor-pointer"
+                    <span
+                        class="font-heading text-temple-red text-sm sm:text-lg md:text-xl lg:text-2xl cursor-pointer truncate"
                         onclick="window.location.href='index.html'" id="nav-title">శివరామలింగేశ్వర ట్రస్ట్</span>
                 </div>
 
                 <!-- Language Toggle -->
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                     <button onclick="toggleLanguage()"
-                        class="bg-temple-red hover:bg-red-900 text-white px-4 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-2">
+                        class="bg-temple-red hover:bg-red-900 text-white px-2 sm:px-4 py-2 rounded-full font-heading text-xs sm:text-sm transition shadow-lg flex items-center gap-1 sm:gap-2">
                         <span id="lang-btn-text">English</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden sm:block" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.148" />
                         </svg>
@@ -130,7 +154,7 @@
         </div>
         <div
             class="absolute bottom-0 w-full p-2 text-center text-gray-500 text-sm border-t border-orange-200 bg-orange-50">
-            &copy; 2025 Shivaramalingeshwara Trust
+            &copy; <span class="currentYear">2025</span> Shivaramalingeshwara Trust
         </div>
     </div>
 
@@ -139,16 +163,16 @@
 
         <!-- Page Header -->
         <section class="text-center mb-12">
-            <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-temple-red mb-4">
+            <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl text-temple-red mb-4" id="about-page-title">
                 🙏 ధర్మ సంరక్షణ - మనందరి బాధ్యత 🙏
             </h1>
-            <p class="text-gray-600 text-lg">(Our Dharma, Our Responsibility)</p>
+            <p class="text-gray-600 text-lg" id="about-page-subtitle">(Our Dharma, Our Responsibility)</p>
         </section>
 
         <!-- Sub Heading Card -->
         <section class="mb-10">
             <div class="bg-gradient-to-r from-saffron to-marigold rounded-2xl p-6 md:p-8 text-center shadow-lg">
-                <h2 class="font-heading text-2xl md:text-3xl text-white drop-shadow-md">
+                <h2 class="font-heading text-2xl md:text-3xl text-white drop-shadow-md" id="about-sub-heading">
                     ✨ గుప్పెడు దానం - కోటి జన్మల పుణ్యఫలం ✨
                 </h2>
             </div>
@@ -159,7 +183,7 @@
 
             <!-- Introduction -->
             <div class="glass-card p-6 md:p-8 rounded-2xl">
-                <p class="text-lg md:text-xl leading-relaxed text-gray-700">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700" id="about-intro">
                     ఆలయ నిర్మాణం అంటే కేవలం రాళ్లు, సిమెంటుతో కట్టే నిర్మాణం కాదు; అది మన <strong
                         class="text-temple-red">సనాతన ధర్మానికి</strong>, రాబోయే తరాల సంస్కృతికి వేస్తున్న బలమైన పునాది.
                     శాస్త్రాల ప్రకారం, దేవాలయ నిర్మాణానికి భక్తితో ఒక చిన్న ఇటుకను సమర్పించినా, అది సాక్షాత్తు <strong
@@ -170,10 +194,11 @@
             <!-- Our Mission -->
             <div
                 class="bg-gradient-to-r from-orange-50 to-yellow-50 border-l-4 border-temple-red rounded-xl p-6 md:p-8 shadow-md">
-                <h3 class="font-heading text-xl md:text-2xl text-temple-red mb-4 flex items-center gap-2">
+                <h3 class="font-heading text-xl md:text-2xl text-temple-red mb-4 flex items-center gap-2"
+                    id="about-mission-title">
                     <span>🛕</span> మా బృహత్తర సంకల్పం
                 </h3>
-                <p class="text-lg leading-relaxed text-gray-700">
+                <p class="text-lg leading-relaxed text-gray-700" id="about-mission-text">
                     <strong class="text-temple-red">శ్రీరామలింగేశ్వర ట్రస్ట్</strong> ఆధ్వర్యంలో, చరిత్రలో నిలిచిపోయేలా
                     <strong class="text-saffron-dark">79 అడుగుల భారీ శ్రీరాముని కాంస్య విగ్రహాన్ని</strong> మరియు
                     శ్రీరామ, శివ, దుర్గా మాతల ఆలయాలను నిర్మిస్తున్నాము. ఇంతటి బృహత్తర యజ్ఞానికి భారీ వనరులు అవసరం. ఇది ఏ
@@ -183,7 +208,7 @@
 
             <!-- Squirrel Story -->
             <div class="glass-card p-6 md:p-8 rounded-2xl">
-                <p class="text-lg md:text-xl leading-relaxed text-gray-700">
+                <p class="text-lg md:text-xl leading-relaxed text-gray-700" id="about-squirrel-story">
                     <span class="text-2xl">🐿️</span> రాముడి వారధి నిర్మాణంలో ఉడత చేసిన సాయం ఎలా చరిత్రలో నిలిచిపోయిందో,
                     ఈ పవిత్ర కార్యంలో <strong class="text-temple-red">మీరు చేసే చిన్న సహాయం కూడా ఒక పవిత్ర శిలగా మారి
                         కలకాలం నిలిచిపోతుంది</strong>. మీ శక్తిమేరకు విరాళం అందించి, ఆ శ్రీ సీతారామచంద్రుల మరియు
@@ -199,7 +224,7 @@
                 <div class="absolute bottom-2 right-4 text-6xl text-white/10">ॐ</div>
 
                 <div class="relative text-center">
-                    <h3 class="font-heading text-xl md:text-2xl text-marigold mb-6">
+                    <h3 class="font-heading text-xl md:text-2xl text-marigold mb-6" id="about-gita-title">
                         📜 సాత్త్విక దానం - భగవద్గీత సారం 📜
                     </h3>
 
@@ -213,7 +238,7 @@
                     </div>
 
                     <!-- Telugu Meaning -->
-                    <div class="text-orange-100 text-base md:text-lg leading-relaxed">
+                    <div class="text-orange-100 text-base md:text-lg leading-relaxed" id="about-gita-meaning">
                         <p>"ఏ దానమైతే ప్రతిఫలాన్ని ఆశించకుండా, కేవలం కర్తవ్య భావంతో, సరైన సమయంలో, సరైన ప్రదేశంలో, మరియు
                             అర్హుడైన వ్యక్తికి ఇవ్వబడుతుందో, అటువంటి దానాన్ని <strong class="text-marigold">సాత్త్విక
                                 దానం</strong> అని అంటారు."</p>
@@ -224,10 +249,11 @@
             <!-- Our Promise -->
             <div
                 class="bg-gradient-to-r from-green-50 to-teal-50 border-l-4 border-green-500 rounded-xl p-6 md:p-8 shadow-md">
-                <h3 class="font-heading text-xl md:text-2xl text-green-700 mb-4 flex items-center gap-2">
+                <h3 class="font-heading text-xl md:text-2xl text-green-700 mb-4 flex items-center gap-2"
+                    id="about-promise-title">
                     <span>✅</span> మా హామీ
                 </h3>
-                <p class="text-lg leading-relaxed text-gray-700">
+                <p class="text-lg leading-relaxed text-gray-700" id="about-promise-text">
                     మేము చేపట్టిన ఈ ప్రయత్నం పూర్తిగా <strong class="text-green-700">ధర్మబద్ధమైనది, పారదర్శకమైనది మరియు
                         నిస్వార్థమైనది</strong>. మీరు అందించే ప్రతి రూపాయి కేవలం సనాతన ధర్మ రక్షణకు మరియు ఈ ఆలయ నిర్మాణ
                     పనులకు మాత్రమే వినియోగించబడుతుందని మేము మీకు హామీ ఇస్తున్నాము.
@@ -236,7 +262,7 @@
 
             <!-- Call to Action -->
             <div class="text-center glass-card p-8 rounded-2xl">
-                <p class="font-heading text-xl md:text-2xl text-temple-red mb-6">
+                <p class="font-heading text-xl md:text-2xl text-temple-red mb-6" id="about-cta-text">
                     🙏 రండి.. ఈ ధర్మ యజ్ఞంలో సమిధలవుదాం.. మన సంస్కృతిని కాపాడుకుందాం 🙏
                 </p>
                 <a href="donation.html"
@@ -253,7 +279,7 @@
 
             <!-- Trust Members Section -->
             <div class="mt-12 glass-card p-6 md:p-8 rounded-2xl">
-                <h3 class="font-heading text-xl md:text-2xl text-temple-red mb-6 text-center">
+                <h3 class="font-heading text-xl md:text-2xl text-temple-red mb-6 text-center" id="about-members-title">
                     👥 మా ట్రస్ట్ సభ్యులు / Our Trust Members 👥
                 </h3>
 
@@ -326,7 +352,7 @@
             <p class="text-gray-400 text-sm mt-2">🏦 A/C: 44715831584 | IFSC: SBIN0020383</p>
             <p class="text-gray-400 text-sm">UPI: shivaramalingeshwaratrust@sbi</p>
             <div class="mt-8 pt-8 border-t border-gray-800 text-xs text-gray-500">
-                &copy; 2025 Shivaramalingeshwara Trust. All rights reserved.
+                &copy; <span class="currentYear">2025</span> Shivaramalingeshwara Trust. All rights reserved.
                 <p class="mt-2 text-gray-600" style="font-size: 10px;">Designed by VS Computers, Kulkacherla, 7036306446
                 </p>
             </div>

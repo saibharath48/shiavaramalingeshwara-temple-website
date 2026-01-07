@@ -96,9 +96,9 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo / Name -->
-                <div class="flex-shrink-0 flex items-center gap-2">
+                <div class="flex-shrink-0 flex items-center gap-2 min-w-0 flex-1 max-w-[60%] sm:max-w-none">
                     <button onclick="toggleMenu()"
-                        class="focus:outline-none transition transform hover:scale-110 active:scale-95"
+                        class="focus:outline-none transition transform hover:scale-110 active:scale-95 flex-shrink-0"
                         title="Open Menu">
                         <div
                             class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center text-white shadow-md">
@@ -109,15 +109,16 @@
                             </svg>
                         </div>
                     </button>
-                    <span class="font-heading text-temple-red text-lg md:text-xl lg:text-2xl cursor-pointer"
+                    <span
+                        class="font-heading text-temple-red text-sm sm:text-lg md:text-xl lg:text-2xl cursor-pointer truncate"
                         onclick="window.location.href='index.html'" id="nav-title">శివరామలింగేశ్వర ట్రస్ట్</span>
                 </div>
 
                 <!-- Audio Toggle & Language Toggle -->
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                     <!-- Audio Toggle Button -->
                     <button id="audioToggle" onclick="toggleAudio()"
-                        class="bg-saffron hover:bg-saffron-dark text-white px-3 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-2"
+                        class="bg-saffron hover:bg-saffron-dark text-white px-2 sm:px-3 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-1 sm:gap-2"
                         title="Toggle Sound">
                         <svg id="audioIcon" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
@@ -129,10 +130,10 @@
 
                     <!-- Language Toggle -->
                     <button onclick="toggleLanguage()"
-                        class="bg-temple-red hover:bg-red-900 text-white px-4 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-2">
+                        class="bg-temple-red hover:bg-red-900 text-white px-2 sm:px-4 py-2 rounded-full font-heading text-xs sm:text-sm transition shadow-lg flex items-center gap-1 sm:gap-2">
                         <span id="lang-btn-text">English</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden sm:block" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.148" />
                         </svg>
@@ -195,7 +196,7 @@
         <!-- Sidebar Footer -->
         <div
             class="absolute bottom-0 w-full p-2 text-center text-gray-500 text-sm border-t border-orange-200 bg-orange-50">
-            &copy; 2025 Shivaramalingeshwara Trust
+            &copy; <span class="currentYear"></span>2025</span> Shivaramalingeshwara Trust
         </div>
     </div>
 
@@ -546,7 +547,7 @@
             <p class="text-gray-400 text-sm mt-2">🏦 A/C: 44715831584 | IFSC: SBIN0020383</p>
             <p class="text-gray-400 text-sm">UPI: shivaramalingeshwaratrust@sbi</p>
             <div class="mt-8 pt-8 border-t border-gray-800 text-xs text-gray-500">
-                &copy; 2025 Shivaramalingeshwara Trust. All rights reserved.
+                &copy; <span class="currentYear">2025</span> Shivaramalingeshwara Trust. All rights reserved.
                 <p class="mt-2 text-gray-600" style="font-size: 10px;">Designed by VS Computers, Kulkacherla, 7036306446
                 </p>
             </div>

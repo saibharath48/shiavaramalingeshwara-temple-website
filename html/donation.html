@@ -4,7 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate - Shivaramalingeshwara Trust</title>
+    <title>Donate - Shivaramalingeshwara Trust | 79ft Sri Rama Statue</title>
+    <meta name="description"
+        content="Support the construction of a 79-foot Sri Rama bronze statue at Shivaramalingeshwara Trust, Ghanapur. Donate via UPI, QR code, or GPay/PhonePe.">
+    <meta name="keywords"
+        content="donate, Shivaramalingeshwara Trust, temple donation, Sri Rama statue, Ghanapur, విరాళం, శివరామలింగేశ్వర ట్రస్ట్">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Donate - Shivaramalingeshwara Trust">
+    <meta property="og:description"
+        content="Support the construction of a 79-foot Sri Rama bronze statue. Every contribution counts towards this divine mission.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="../images/og-image.png">
+
     <link rel="icon" type="image/png" href="../images/favicon.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -24,8 +36,6 @@
     <link rel="stylesheet" href="../css/styles.css">
     <!-- QRCode.js - Generates QR locally in browser (no external API calls = secure) -->
     <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
-    <!-- html2canvas - Converts HTML to image for WhatsApp status download -->
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
     <style>
         body {
             padding-top: 80px;
@@ -38,9 +48,9 @@
     <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/95 shadow-md backdrop-blur-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0 flex items-center gap-2">
+                <div class="flex-shrink-0 flex items-center gap-2 min-w-0 flex-1 max-w-[60%] sm:max-w-none">
                     <button onclick="toggleMenu()"
-                        class="focus:outline-none transition transform hover:scale-110 active:scale-95">
+                        class="focus:outline-none transition transform hover:scale-110 active:scale-95 flex-shrink-0">
                         <div
                             class="w-10 h-10 bg-saffron rounded-lg flex items-center justify-center text-white shadow-md">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
@@ -50,15 +60,16 @@
                             </svg>
                         </div>
                     </button>
-                    <span class="font-heading text-temple-red text-lg md:text-xl lg:text-2xl cursor-pointer"
+                    <span
+                        class="font-heading text-temple-red text-sm sm:text-lg md:text-xl lg:text-2xl cursor-pointer truncate"
                         onclick="window.location.href='index.html'" id="nav-title">శివరామలింగేశ్వర ట్రస్ట్</span>
                 </div>
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
                     <button onclick="toggleLanguage()"
-                        class="bg-temple-red hover:bg-red-900 text-white px-4 py-2 rounded-full font-heading text-sm transition shadow-lg flex items-center gap-2">
+                        class="bg-temple-red hover:bg-red-900 text-white px-2 sm:px-4 py-2 rounded-full font-heading text-xs sm:text-sm transition shadow-lg flex items-center gap-1 sm:gap-2">
                         <span id="lang-btn-text">English</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 hidden sm:block" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.148" />
                         </svg>
@@ -138,7 +149,8 @@
                     <div>
                         <label for="donorName" class="block text-gray-700 font-bold mb-1 text-sm">మీ పేరు (Your Name)
                             *</label>
-                        <input type="text" id="donorName" required
+                        <input type="text" id="donorName" required aria-label="Enter your full name"
+                            aria-required="true"
                             class="w-full px-4 py-3 border-2 border-orange-200 rounded-lg focus:outline-none focus:border-temple-red transition font-body"
                             placeholder="Enter your full name">
                     </div>
@@ -148,6 +160,7 @@
                         <label for="mobileNumber" class="block text-gray-700 font-bold mb-1 text-sm">మొబైల్ నంబర్
                             (Mobile) *</label>
                         <input type="tel" id="mobileNumber" required pattern="[0-9]{10}" maxlength="10"
+                            aria-label="Enter 10-digit mobile number" aria-required="true"
                             class="w-full px-4 py-3 border-2 border-orange-200 rounded-lg focus:outline-none focus:border-temple-red transition font-body"
                             placeholder="Enter 10-digit mobile number">
                     </div>
@@ -156,7 +169,8 @@
                     <div>
                         <label for="village" class="block text-gray-700 font-bold mb-1 text-sm">గ్రామం (Village/City)
                             *</label>
-                        <input type="text" id="village" required
+                        <input type="text" id="village" required aria-label="Enter your village or city"
+                            aria-required="true"
                             class="w-full px-4 py-3 border-2 border-orange-200 rounded-lg focus:outline-none focus:border-temple-red transition font-body"
                             placeholder="Enter your village or city">
                     </div>
@@ -165,7 +179,7 @@
                     <div>
                         <label for="amount" class="block text-gray-700 font-bold mb-1 text-sm">మొత్తం (Amount) ₹ <span
                                 class="text-gray-400 font-normal">(Optional)</span></label>
-                        <input type="number" id="amount" min="1"
+                        <input type="number" id="amount" min="1" aria-label="Enter donation amount in rupees"
                             class="w-full px-4 py-3 border-2 border-orange-200 rounded-lg focus:outline-none focus:border-temple-red transition font-body text-lg font-bold"
                             placeholder="Enter amount or leave empty">
                     </div>
@@ -187,10 +201,10 @@
                     <!-- Payment Options -->
                     <p class="text-center font-bold text-gray-700 mb-3">Choose Payment Method</p>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-                        <!-- Option 1: QR Code -->
+                    <div class="flex justify-center">
+                        <!-- QR Code Button -->
                         <button type="button" onclick="showQRCode()"
-                            class="w-full bg-gradient-to-r from-saffron to-saffron-dark hover:from-orange-600 hover:to-red-700 text-white font-heading py-4 rounded-lg shadow-md transform transition active:scale-95 flex items-center justify-center gap-2">
+                            class="w-full max-w-sm bg-gradient-to-r from-saffron to-saffron-dark hover:from-orange-600 hover:to-red-700 text-white font-heading py-4 rounded-lg shadow-md transform transition active:scale-95 flex items-center justify-center gap-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -198,17 +212,6 @@
                             </svg>
                             <span>Pay via QR Code</span>
                         </button>
-
-                        <!-- Option 2: GPay/PhonePe -->
-                        <a id="upiDirectLink" href="#" onclick="return handleUPIClick()"
-                            class="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-heading py-4 rounded-lg shadow-md transform transition active:scale-95 flex items-center justify-center gap-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                            </svg>
-                            <span>GPay / PhonePe</span>
-                        </a>
                     </div>
 
                     <p class="text-center text-xs text-gray-400 mt-3">
@@ -229,12 +232,13 @@
                         <!-- UTR Input -->
                         <div>
                             <label for="utrNumber" class="block text-gray-700 font-bold mb-1 text-sm">
-                                UTR/Transaction Number
-                                <span class="text-gray-400 font-normal">(Optional / ఐచ్ఛికం)</span>
+                                UTR/Transaction Number *
+                                <span class="text-temple-red font-normal">(అవసరం / Required)</span>
                             </label>
-                            <input type="text" id="utrNumber" maxlength="22"
+                            <input type="text" id="utrNumber" required maxlength="22"
+                                aria-label="Enter UTR or Transaction Number" aria-required="true"
                                 class="w-full px-4 py-3 border-2 border-orange-200 rounded-lg focus:outline-none focus:border-temple-red transition font-body"
-                                placeholder="Enter 12-digit UTR number">
+                                placeholder="Enter UTR/Transaction number">
                             <p class="text-xs text-gray-500 mt-1">
                                 💡 UTR number can be found in your payment confirmation message
                             </p>
@@ -294,7 +298,7 @@
             <p class="text-gray-400 text-xs mt-2">🏦 A/C: 44715831584 | IFSC: SBIN0020383</p>
             <p class="text-gray-400 text-xs">UPI: shivaramalingeshwaratrust@sbi</p>
             <div class="mt-4 pt-4 border-t border-gray-800 text-xs text-gray-500">
-                &copy; 2025 Shivaramalingeshwara Trust. All rights reserved.
+                &copy; <span id="currentYear">2025</span> Shivaramalingeshwara Trust. All rights reserved.
                 <p class="mt-2 text-gray-600" style="font-size: 10px;">Designed by VS Computers, Kulkacherla, 7036306446
                 </p>
             </div>
